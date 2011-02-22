@@ -9,6 +9,50 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+""" My settings
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set nobackup
+set directory=/tmp
+set nohlsearch
+
+let mapleader="\\"
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+
+set hidden
+nnoremap ' `
+nnoremap ` '
+set history=1000
+runtime macros/matchit.vim
+set wildmenu
+set wildmode=list:longest
+set title
+set scrolloff=5
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+nnoremap <C-j> j<C-e>
+nnoremap <C-k> k<C-y>
+nnoremap <C-h> :tabprev<Cr>
+nnoremap <C-l> :tabnext<Cr>
+" Apparently this is bad? "Insert mode is for inserting text"
+"inoremap <C-h> <C-o>:tabprev<Cr>
+"inoremap <C-l> <C-o>:tabnext<Cr>
+
+" Highlight tabs and trailing whitespace
+set listchars=tab:▸•,trail:☠
+set list
+" Nasty red background (also handles Windows ^M line endings)
+highlight SpecialKey ctermfg=black ctermbg=red
+
+set gdefault
+
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -24,7 +68,7 @@ set backspace=indent,eol,start
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
-  set backup		" keep a backup file
+"  set backup		" keep a backup file
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
@@ -50,7 +94,7 @@ endif
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
-  set hlsearch
+"  set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.
