@@ -150,3 +150,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" Include bundled plugins via Pathogen
+call pathogen#runtime_append_all_bundles()
