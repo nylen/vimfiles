@@ -9,8 +9,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set nobackup
-set directory=/tmp
-set nohlsearch
+set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
 
 let mapleader="\\"
 nnoremap <Tab> <Esc>
@@ -19,7 +19,9 @@ onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
 inoremap <Leader><Tab> <Tab>
 
+set nohlsearch
 set hidden
+
 nnoremap ' `
 nnoremap ` '
 set history=1000
