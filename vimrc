@@ -33,11 +33,11 @@ set wildmenu
 set wildmode=list:longest
 set title
 set scrolloff=5
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
 
-nnoremap <C-j> j<C-e>
-nnoremap <C-k> k<C-y>
+nnoremap <C-j> 5j5<C-e>
+nnoremap <C-k> 5k5<C-y>
 nnoremap <C-h> :tabprev<Cr>
 nnoremap <C-l> :tabnext<Cr>
 " Apparently this is bad? "Insert mode is for inserting text"
