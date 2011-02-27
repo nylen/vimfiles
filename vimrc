@@ -1,17 +1,20 @@
-" Based on Bram's example vimrc file.
+" Based on Bram's example vimrc file ( vimrc_example.vim )
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-""" My settings
+" Tabs/indentation
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
+" Directories and backups
 set nobackup
 set directory=~/.vim/tmp
 set undodir=~/.vim/tmp
 
+" Use Tab instead of Esc in most places
 let mapleader="\\"
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
@@ -19,25 +22,23 @@ onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
 inoremap <Leader><Tab> <Tab>
 
-set nohlsearch
-set hidden
-
+" Switch a couple of mappings
+nnoremap 0 ^
+nnoremap ^ 0
 nnoremap ' `
 nnoremap ` '
-set history=1000
-runtime macros/matchit.vim
-set wildmenu
-set wildmode=list:longest
-set title
-set scrolloff=5
+
+" Scrolling-related things
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
-
 nnoremap <C-j> 5j5<C-e>
 nnoremap <C-k> 5k5<C-y>
+set scrolloff=5
+
+" Quickly switch tabs
 nnoremap <C-h> :tabprev<Cr>
 nnoremap <C-l> :tabnext<Cr>
-" Apparently this is bad? "Insert mode is for inserting text"
+" "Insert mode is for inserting text"
 "inoremap <C-h> <C-o>:tabprev<Cr>
 "inoremap <C-l> <C-o>:tabnext<Cr>
 
@@ -47,32 +48,50 @@ set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red
 
-set gdefault
-nnoremap gc :tabe ~/.vim/vimrc<Cr>
-nnoremap gs :tabdo :source ~/.vim/vimrc<Cr>
-nnoremap g% :echo expand("%:p:n")<Cr>
-
+" Use relative line numbering
 set relativenumber
-" What I really want is to cycle through none,relative,absolute
+" TODO: What I really want is to cycle through none,relative,absolute
 "nnoremap gn :set invnumber<Cr>
 set cpoptions+=n
 highlight LineNr term=NONE cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 set numberwidth=3
 
+" Better search options
+set incsearch
+set nohlsearch
+set gdefault
+
+" Commands, tab completion, and history
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set history=1000
+
+" Commands for dealing with vimrc
+nnoremap gc :tabe ~/.vim/vimrc<Cr>
+nnoremap gs :tabdo :source ~/.vim/vimrc<Cr>
+
+" Buffer settings
+set hidden
 set autoread
+
+" Status bar and window title
+set ruler
+nnoremap g% :echo expand("%:p:n")<Cr>
+set title
+
+" Improve bracket matching
+runtime macros/matchit.vim
+
+
+" Include bundled plugins via Pathogen
+call pathogen#runtime_append_all_bundles()
+
+
+""" Remaining settings from vimrc_example.vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-if has("vms")
-  set nobackup    " do not keep a backup file, use versions instead
-else
-"  set backup    " keep a backup file
-endif
-set history=50    " keep 50 lines of command line history
-set ruler    " show the cursor position all the time
-set showcmd    " display incomplete commands
-set incsearch    " do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -137,6 +156,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 endif
-
-" Include bundled plugins via Pathogen
-call pathogen#runtime_append_all_bundles()
