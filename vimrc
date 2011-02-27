@@ -51,6 +51,18 @@ set list
 highlight SpecialKey ctermfg=black ctermbg=red
 
 set gdefault
+nnoremap gc :tabe ~/.vim/vimrc<Cr>
+nnoremap gs :tabdo :source ~/.vim/vimrc<Cr>
+nnoremap g% :echo expand("%:p:n")<Cr>
+
+set relativenumber
+" What I really want is to cycle through none,relative,absolute
+"nnoremap gn :set invnumber<Cr>
+set cpoptions+=n
+highlight LineNr term=NONE cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+set numberwidth=3
+
+set autoread
 
 
 " When started as "evim", evim.vim will already have done these settings.
