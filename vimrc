@@ -48,6 +48,15 @@ set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red
 
+" Commands for fixing up whitespace
+" note - we set gdefault later
+cabbrev FixTabs s/\t/  /
+cabbrev FixSpaces s/\s\+$//
+nmap <Leader>wt :%FixTabs<Cr>
+nmap <Leader>ws :%FixSpaces<Cr>
+vmap <Leader>wt :FixTabs<Cr>
+vmap <Leader>ws :FixSpaces<Cr>
+
 " Use relative line numbering
 set relativenumber
 " TODO: What I really want is to cycle through none,relative,absolute
