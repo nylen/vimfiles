@@ -73,12 +73,12 @@ set gdefault
 " Commands, tab completion, and history
 set showcmd
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 set history=1000
 
 " Commands for dealing with vimrc
-nnoremap gc :tabe ~/.vim/vimrc<Cr>
-nnoremap gs :tabdo :source ~/.vim/vimrc<Cr>
+nnoremap <Leader>c :tabe ~/.vim/vimrc<Cr>
+nnoremap <Leader>s :tabdo :source ~/.vim/vimrc<Cr>
 
 " Buffer settings
 set hidden
