@@ -43,7 +43,7 @@ nnoremap <C-l> :tabnext<Cr>
 "inoremap <C-l> <C-o>:tabnext<Cr>
 
 " Highlight tabs and trailing whitespace
-set listchars=tab:▸•,trail:☠
+set listchars=tab:>-,trail:*
 set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red
