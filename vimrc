@@ -86,7 +86,7 @@ set autoread
 
 " Status bar and window title
 set ruler
-nnoremap g% :echo expand("%:p:n")<Cr>
+nnoremap <Leader>% :echo expand("%:p:n")<Cr>
 set title
 
 " Improve bracket matching
