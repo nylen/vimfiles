@@ -16,7 +16,7 @@ set directory=~/.vim/tmp
 set undodir=~/.vim/tmp
 
 " Use Tab instead of Esc in most places
-let mapleader="\\"
+let mapleader=","
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
