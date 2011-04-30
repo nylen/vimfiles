@@ -36,9 +36,11 @@ nnoremap <C-j> 5j5<C-e>
 nnoremap <C-k> 5k5<C-y>
 set scrolloff=5
 
-" Quickly switch tabs
+" Quickly switch and move tabs
 nnoremap <C-h> :tabprev<Cr>
 nnoremap <C-l> :tabnext<Cr>
+nnoremap <Leader>th :execute 'tabmove ' . (tabpagenr() - 2)<Cr>
+nnoremap <Leader>tl :execute 'tabmove ' . tabpagenr()<Cr>
 " "Insert mode is for inserting text"
 "inoremap <C-h> <C-o>:tabprev<Cr>
 "inoremap <C-l> <C-o>:tabnext<Cr>
