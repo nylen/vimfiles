@@ -21,7 +21,10 @@ nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
+" Make ,, insert a tab
+inoremap <Leader>, <Tab>
+" Make ,<Tab> insert a comma and leave insert mode
+inoremap <Leader><Tab> ,<Esc>`^
 
 " Switch a couple of mappings
 nnoremap 0 ^
