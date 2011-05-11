@@ -4,11 +4,21 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Set <Leader> to comma
+" This works because I can't think of a time when I needed to type a comma
+" that was not followed by a space.
+let mapleader=","
+
 " Tabs/indentation
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set smarttab
+" Enter insert mode on the current line at the current indentation level
+nnoremap <Leader>a ddO
+nnoremap <Leader>A ddO
+nnoremap <Leader>i ddO
+nnoremap <Leader>I ddO
 
 " Directories and backups
 set nobackup
@@ -16,7 +26,6 @@ set directory=~/.vim/tmp
 set undodir=~/.vim/tmp
 
 " Use Tab instead of Esc in most places
-let mapleader=","
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
