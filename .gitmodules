@@ -9,4 +9,4 @@
 	url = git://github.com/tpope/vim-abolish.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive
