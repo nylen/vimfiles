@@ -96,7 +96,7 @@ set history=1000
 
 " Commands for dealing with vimrc
 nnoremap <Leader>c :tabe ~/.vim/vimrc<Cr>
-nnoremap <Leader>s :tabdo :source ~/.vim/vimrc<Cr>
+nnoremap <Leader>s :source ~/.vim/vimrc<Cr>
 
 " Buffer settings
 set hidden
