@@ -70,8 +70,10 @@ cabbrev FixTabs s/\t/  /
 cabbrev FixSpaces s/\s\+$//
 nmap <Leader>wt :%FixTabs<Cr>
 nmap <Leader>ws :%FixSpaces<Cr>
+nmap <Leader>wa :%FixTabs<Cr>:%FixSpaces<Cr>
 vmap <Leader>wt :FixTabs<Cr>
 vmap <Leader>ws :FixSpaces<Cr>
+vmap <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 
 " Use relative line numbering
 set relativenumber
