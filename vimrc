@@ -24,6 +24,7 @@ nnoremap <Leader>I ddO
 set nobackup
 set directory=~/.vim/tmp
 set undodir=~/.vim/tmp
+set undofile
 
 " Use Tab instead of Esc in most places
 nnoremap <Tab> <Esc>
