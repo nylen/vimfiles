@@ -37,16 +37,16 @@ inoremap <Leader>, <Tab>
 inoremap <Leader><Tab> ,<Esc>`^
 
 " Switch a couple of mappings
-nnoremap 0 ^
-nnoremap ^ 0
-nnoremap ' `
-nnoremap ` '
+noremap 0 ^
+noremap ^ 0
+noremap ' `
+noremap ` '
 
 " Scrolling-related things
-nnoremap <C-e> 5<C-e>
-nnoremap <C-y> 5<C-y>
-nnoremap <C-j> 5j5<C-e>
-nnoremap <C-k> 5k5<C-y>
+noremap <C-e> 5<C-e>
+noremap <C-y> 5<C-y>
+noremap <C-j> 5j5<C-e>
+noremap <C-k> 5k5<C-y>
 set scrolloff=5
 
 " Quickly switch and move tabs
