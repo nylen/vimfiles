@@ -61,6 +61,9 @@ set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red
 
+" Improve matching-brace highlight colors
+highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold
+
 " Commands for fixing up whitespace
 " note - we set gdefault later
 cabbrev FixTabs s/\t/  /
