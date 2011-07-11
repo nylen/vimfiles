@@ -16,9 +16,6 @@ set shiftwidth=2
 set smarttab
 " Enter insert mode on the current line at the current indentation level
 nnoremap <Leader>a ddO
-nnoremap <Leader>A ddO
-nnoremap <Leader>i ddO
-nnoremap <Leader>I ddO
 
 " Directories and backups
 set nobackup
