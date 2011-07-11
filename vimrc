@@ -75,10 +75,8 @@ vmap <Leader>wt :FixTabs<Cr>
 vmap <Leader>ws :FixSpaces<Cr>
 vmap <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 
-" Use relative line numbering
-set relativenumber
-" TODO: What I really want is to cycle through none,relative,absolute
-"nnoremap gn :set invnumber<Cr>
+" Enable line numbering
+set number
 set cpoptions+=n
 highlight LineNr term=NONE cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 set numberwidth=3
