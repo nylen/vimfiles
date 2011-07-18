@@ -19,7 +19,7 @@ nnoremap <Leader>a ddO
 
 " Directories and backups
 set nobackup
-set directory=~/.vim/tmp
+set directory=~/.vim/tmp//
 set undodir=~/.vim/tmp
 set undofile
 
