@@ -109,6 +109,11 @@ set title
 runtime macros/matchit.vim
 
 
+" Set up haskellmode
+let g:haddock_browser = "/usr/bin/firefox"
+au BufEnter *.hs compiler ghc
+
+
 " Include bundled plugins via Pathogen
 call pathogen#runtime_append_all_bundles()
 
