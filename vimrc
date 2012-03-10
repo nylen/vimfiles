@@ -47,10 +47,13 @@ noremap <C-k> 5k5<C-y>
 set scrolloff=5
 
 " Quickly switch and move tabs
+" TODO: Make these commands accept ranges
 nnoremap <C-h> :tabprev<Cr>
 nnoremap <C-l> :tabnext<Cr>
-nnoremap <Leader>th :execute 'tabmove ' . (tabpagenr() - 2)<Cr>
-nnoremap <Leader>tl :execute 'tabmove ' . tabpagenr()<Cr>
+nnoremap <Leader>th :execute 'tabmove ' . string(float2nr(fmod(
+    \tabpagenr() - 2 + tabpagenr('$'), tabpagenr('$'))))<Cr>
+nnoremap <Leader>tl :execute 'tabmove ' . string(float2nr(fmod(
+    \tabpagenr(), tabpagenr('$'))))<Cr>
 " "Insert mode is for inserting text"
 "inoremap <C-h> <C-o>:tabprev<Cr>
 "inoremap <C-l> <C-o>:tabnext<Cr>
