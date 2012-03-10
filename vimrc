@@ -78,6 +78,25 @@ vmap <Leader>wt :FixTabs<Cr>
 vmap <Leader>ws :FixSpaces<Cr>
 vmap <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 
+" Fix control statements in code:
+" "if(x)"  -> "if (x)"
+" "for(x)" -> "for (x)"
+" etc.
+cabbrev FixControlStatements
+    \ s/\<\(if\)(/\1 (/e<bar>
+    \ s/\<\(elsif\)(/\1 (/e<bar>
+    \ s/\<\(elseif\)(/\1 (/e<bar>
+    \ s/\<\(for\)(/\1 (/e<bar>
+    \ s/\<\(foreach\)(/\1 (/e<bar>
+    \ s/\<\(while\)(/\1 (/e<bar>
+    \ s/\<\(try\)(/\1 (/e<bar>
+    \ s/\<\(catch\)(/\1 (/e<bar>
+    \ s/\<\(my\)(/\1 (/e<bar>
+    \ s/\<\(unless\)(/\1 (/e<bar>
+    \ s/\<\(until\)(/\1 (/e<bar>
+nmap <Leader>wc :%FixControlStatements<Cr>
+vmap <Leader>wc :FixControlStatements<Cr>
+
 " Enable line numbering
 set number
 set cpoptions+=n
