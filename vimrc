@@ -92,6 +92,9 @@ set wildmenu
 set wildmode=list:longest,full
 set history=1000
 
+" Code completion
+set completeopt=menu,menuone,preview
+
 " Commands for dealing with vimrc
 nnoremap <Leader>c :tabe ~/.vim/vimrc<Cr>
 nnoremap <Leader>s :source ~/.vim/vimrc<Cr>
