@@ -97,6 +97,11 @@ cabbrev FixControlStatements
 nmap <Leader>wc :%FixControlStatements<Cr>
 vmap <Leader>wc :FixControlStatements<Cr>
 
+" Ensure opening braces in code have spaces before them
+cabbrev FixBraces s/\()\\|\<\(else\\|try\\|catch\\|finally\)\){\s*$/\1 {/
+nmap <Leader>wb :%FixBraces<Cr>
+vmap <Leader>wb :FixBraces<Cr>
+
 " Enable line numbering
 set number
 set cpoptions+=n
