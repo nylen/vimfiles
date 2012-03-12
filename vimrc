@@ -82,18 +82,18 @@ vmap <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 " "if(x)"  -> "if (x)"
 " "for(x)" -> "for (x)"
 " etc.
-cabbrev FixControlStatements
-    \ s/\<\(if\)(/\1 (/e<bar>
-    \ s/\<\(elsif\)(/\1 (/e<bar>
-    \ s/\<\(elseif\)(/\1 (/e<bar>
-    \ s/\<\(for\)(/\1 (/e<bar>
-    \ s/\<\(foreach\)(/\1 (/e<bar>
-    \ s/\<\(while\)(/\1 (/e<bar>
-    \ s/\<\(try\)(/\1 (/e<bar>
-    \ s/\<\(catch\)(/\1 (/e<bar>
-    \ s/\<\(my\)(/\1 (/e<bar>
-    \ s/\<\(unless\)(/\1 (/e<bar>
-    \ s/\<\(until\)(/\1 (/e<bar>
+command! -range FixControlStatements :
+    \<line1>,<line2>s/\<\(if\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(elsif\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(elseif\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(for\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(foreach\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(while\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(try\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(catch\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(my\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(unless\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(until\)(/\1 (/e<bar>
 nmap <Leader>wc :%FixControlStatements<Cr>
 vmap <Leader>wc :FixControlStatements<Cr>
 
