@@ -59,13 +59,17 @@ nnoremap <Leader>tl :execute 'tabmove ' . string(float2nr(fmod(
 "inoremap <C-l> <C-o>:tabnext<Cr>
 
 " Highlight tabs and trailing whitespace
-set listchars=tab:>-,trail:*
+set listchars=tab:>.,trail:*
 set list
 " Nasty red background (also handles Windows ^M line endings)
-highlight SpecialKey ctermfg=black ctermbg=red
+highlight SpecialKey ctermfg=black ctermbg=red cterm=none term=none
+nnoremap <Leader>l :highlight SpecialKey ctermfg=black    ctermbg=none
+    \ cterm=none term=none<Cr>
+nnoremap <Leader>L :highlight SpecialKey ctermfg=darkgray ctermbg=none
+    \ cterm=bold term=bold<Cr>
 
 " Improve matching-brace highlight colors
-highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold
+highlight MatchParen ctermfg=darkblue ctermbg=yellow cterm=bold term=bold
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
@@ -116,7 +120,7 @@ vmap <Leader>wb :FixBraces<Cr>
 " Enable line numbering
 set number
 set cpoptions+=n
-highlight LineNr term=NONE cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+highlight LineNr ctermfg=darkgray ctermbg=none cterm=bold term=bold
 set numberwidth=3
 
 " Better search options
