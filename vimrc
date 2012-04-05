@@ -155,7 +155,7 @@ runtime macros/matchit.vim
 
 
 " Include bundled plugins via Pathogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 
 """"" "Filetype-specific stuff"

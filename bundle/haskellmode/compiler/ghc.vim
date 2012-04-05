@@ -533,4 +533,3 @@ endif
 if !s:GHC_CachedConfig
   call GHC_SaveConfig()
 endif
-

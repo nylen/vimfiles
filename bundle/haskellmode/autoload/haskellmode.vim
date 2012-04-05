@@ -188,4 +188,3 @@ function! haskellmode#GHC_VersionGE(target)
   endfor
   return 1
 endfunction
-

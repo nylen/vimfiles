@@ -28,7 +28,8 @@ function! HpasteIndex()
   read http://hpaste.org
   %s/\_$\_.//g
   %s/<tr[^>]*>//g
-  %s/<\/tr>//g
+  %s/<\/tr>/
+/g
   g/<\/table>/d
   g/DOCTYPE/d
   %s/<td>\([^<]*\)<\/td><td><a href="\/fastcgi\/hpaste\.fcgi\/view?id=\([0-9]*\)">\([^<]*\)<\/a><\/td><td>\([^<]*\)<\/td><td>\([^<]*\)<\/td><td>\([^<]*\)<\/td>/\2 [\1] "\3" \4 \5 \6/
@@ -76,4 +77,3 @@ endfunction
 "   endif
 "   let cmd = g:wget.' --post-data="content='.join(lines,'').'&nick='.nick.'&title='.title.'&announce='.announce.'" '.url
 "   exe escape(cmd,'%')
-" endfunction
