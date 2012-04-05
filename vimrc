@@ -154,10 +154,6 @@ set title
 runtime macros/matchit.vim
 
 
-" Include bundled plugins via Pathogen
-call pathogen#infect()
-
-
 """"" "Filetype-specific stuff"
 
 
@@ -168,6 +164,10 @@ autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
 " Set up haskellmode
 let g:haddock_browser = "/usr/bin/firefox"
 au BufEnter *.hs compiler ghc
+
+
+""""" "Include bundled plugins via Pathogen"
+call pathogen#infect()
 
 
 """"" "Remaining settings from vimrc_example.vim"
