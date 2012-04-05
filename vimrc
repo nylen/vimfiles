@@ -69,8 +69,8 @@ highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
-cabbrev FixTabs s/\t/  /
-cabbrev FixSpaces s/\s\+$//
+command! -range FixTabs   :<line1>,<line2>s/\t/  /
+command! -range FixSpaces :<line1>,<line2>s/\s\+$//
 nmap <Leader>wt :%FixTabs<Cr>
 nmap <Leader>ws :%FixSpaces<Cr>
 nmap <Leader>wa :%FixTabs<Cr>:%FixSpaces<Cr>
