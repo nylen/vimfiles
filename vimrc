@@ -160,6 +160,8 @@ runtime macros/matchit.vim
 " Set filetype for Django templates
 autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
 
+" Disable automatic Python folding
+let g:pymode_folding = 0
 
 " Set up haskellmode
 let g:haddock_browser = "/usr/bin/firefox"
