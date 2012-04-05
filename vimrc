@@ -97,8 +97,19 @@ command! -range FixControlStatements :
 nmap <Leader>wc :%FixControlStatements<Cr>
 vmap <Leader>wc :FixControlStatements<Cr>
 
-" Ensure opening braces in code have spaces before them
-cabbrev FixBraces s/\()\\|\<\(else\\|try\\|catch\\|finally\)\){\s*$/\1 {/
+" Ensure spaces in code between braces and keywords
+command! -range FixBraces :
+    \<line1>,<line2>s/){\s*$/) {/e<bar>
+    \<line1>,<line2>s/\<\(else\){/\1 {/e<bar>
+    \<line1>,<line2>s/\<\(try\){/\1 {/e<bar>
+    \<line1>,<line2>s/\<\(catch\){/\1 {/e<bar>
+    \<line1>,<line2>s/\<\(finally\){/\1 {/e<bar>
+    \<line1>,<line2>s/\<\(do\){/\1 {/e<bar>
+    \<line1>,<line2>s/}\(else\)\>/} \1/e<bar>
+    \<line1>,<line2>s/}\(try\)\>/} \1/e<bar>
+    \<line1>,<line2>s/}\(catch\)\>/} \1/e<bar>
+    \<line1>,<line2>s/}\(finally\)\>/} \1/e<bar>
+    \<line1>,<line2>s/}\(do\)\>/} \1/e<bar>
 nmap <Leader>wb :%FixBraces<Cr>
 vmap <Leader>wb :FixBraces<Cr>
 
