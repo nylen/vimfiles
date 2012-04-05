@@ -1,1 +1,1 @@
-../../../sparkup/ftplugin/html/sparkup.py
+../../../vim-sparkup/ftplugin/html/sparkup.py
