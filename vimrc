@@ -154,16 +154,23 @@ set title
 runtime macros/matchit.vim
 
 
+" Include bundled plugins via Pathogen
+call pathogen#runtime_append_all_bundles()
+
+
+""""" "Filetype-specific stuff"
+
+
+" Set filetype for Django templates
+autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
+
+
 " Set up haskellmode
 let g:haddock_browser = "/usr/bin/firefox"
 au BufEnter *.hs compiler ghc
 
 
-" Include bundled plugins via Pathogen
-call pathogen#runtime_append_all_bundles()
-
-
-""" Remaining settings from vimrc_example.vim
+""""" "Remaining settings from vimrc_example.vim"
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
