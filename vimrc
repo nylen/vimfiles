@@ -69,7 +69,7 @@ nnoremap <Leader>L :highlight SpecialKey ctermfg=darkgray ctermbg=none
     \ cterm=bold term=bold<Cr>
 
 " Improve matching-brace highlight colors
-highlight MatchParen ctermfg=darkblue ctermbg=yellow cterm=bold term=bold
+highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold term=bold
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
