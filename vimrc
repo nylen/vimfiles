@@ -159,6 +159,7 @@ runtime macros/matchit.vim
 
 " Set filetype for Django templates
 autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
+    \ commentstring={#%s#}
 
 " Disable automatic Python folding
 let g:pymode_folding = 0
