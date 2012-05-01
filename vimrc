@@ -169,6 +169,8 @@ au BufEnter *.hs compiler ghc
 
 
 """"" "Include bundled plugins via Pathogen"
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'python-mode')
 call pathogen#infect()
 
 
