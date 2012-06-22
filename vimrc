@@ -168,6 +168,10 @@ let g:pymode_folding = 0
 let g:haddock_browser = "/usr/bin/firefox"
 au BufEnter *.hs compiler ghc
 
+" Change default Sparkup "next" mapping to C-f
+" By default, it overwrites C-n (bad)
+let g:sparkupNextMapping = '<c-f>'
+
 
 """"" "Include bundled plugins via Pathogen"
 let g:pathogen_disabled = []
