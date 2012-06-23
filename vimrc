@@ -46,6 +46,9 @@ noremap <C-j> 5j5<C-e>
 noremap <C-k> 5k5<C-y>
 set scrolloff=5
 
+" Mapping for redraw
+nnoremap <silent> <Leader>r :redraw!<Cr>
+
 " Quickly switch and move tabs
 " TODO: Make these commands accept ranges
 nnoremap <C-h> :tabprev<Cr>
