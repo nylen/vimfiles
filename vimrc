@@ -63,9 +63,9 @@ set listchars=tab:>.,trail:*
 set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red cterm=none term=none
-nnoremap <Leader>l :highlight SpecialKey ctermfg=black    ctermbg=none
+nnoremap <silent> <Leader>l :highlight SpecialKey ctermfg=black    ctermbg=none
     \ cterm=none term=none<Cr>
-nnoremap <Leader>L :highlight SpecialKey ctermfg=darkgray ctermbg=none
+nnoremap <silent> <Leader>L :highlight SpecialKey ctermfg=darkgray ctermbg=none
     \ cterm=bold term=bold<Cr>
 
 " Improve matching-brace highlight colors
@@ -75,12 +75,12 @@ highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold term=bold
 " note - we set gdefault later
 command! -range FixTabs   :<line1>,<line2>s/\t/  /
 command! -range FixSpaces :<line1>,<line2>s/\s\+$//
-nmap <Leader>wt :%FixTabs<Cr>
-nmap <Leader>ws :%FixSpaces<Cr>
-nmap <Leader>wa :%FixTabs<Cr>:%FixSpaces<Cr>
-vmap <Leader>wt :FixTabs<Cr>
-vmap <Leader>ws :FixSpaces<Cr>
-vmap <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
+nnoremap <silent> <Leader>wt :%FixTabs<Cr>
+nnoremap <silent> <Leader>ws :%FixSpaces<Cr>
+nnoremap <silent> <Leader>wa :%FixTabs<Cr>:%FixSpaces<Cr>
+vnoremap <silent> <Leader>wt :FixTabs<Cr>
+vnoremap <silent> <Leader>ws :FixSpaces<Cr>
+vnoremap <silent> <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 
 " Fix control statements in code:
 " "if(x)"  -> "if (x)"
@@ -98,8 +98,8 @@ command! -range FixControlStatements :
     \<line1>,<line2>s/\<\(my\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(unless\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(until\)(/\1 (/e<bar>
-nmap <Leader>wc :%FixControlStatements<Cr>
-vmap <Leader>wc :FixControlStatements<Cr>
+nnoremap <silent> <Leader>wc :%FixControlStatements<Cr>
+vnoremap <silent> <Leader>wc :FixControlStatements<Cr>
 
 " Ensure spaces in code between braces and keywords
 command! -range FixBraces :
@@ -114,8 +114,8 @@ command! -range FixBraces :
     \<line1>,<line2>s/}\(catch\)\>/} \1/e<bar>
     \<line1>,<line2>s/}\(finally\)\>/} \1/e<bar>
     \<line1>,<line2>s/}\(do\)\>/} \1/e<bar>
-nmap <Leader>wb :%FixBraces<Cr>
-vmap <Leader>wb :FixBraces<Cr>
+nnoremap <silent> <Leader>wb :%FixBraces<Cr>
+vnoremap <silent> <Leader>wb :FixBraces<Cr>
 
 " Enable line numbering
 set number
@@ -138,8 +138,8 @@ set history=1000
 set completeopt=menu,menuone,preview
 
 " Commands for dealing with vimrc
-nnoremap <Leader>c :tabe ~/.vim/vimrc<Cr>
-nnoremap <Leader>s :source ~/.vim/vimrc<Cr>
+nnoremap <silent> <Leader>c :tabe ~/.vim/vimrc<Cr>
+nnoremap <silent> <Leader>s :source ~/.vim/vimrc<Cr>
 
 " Buffer settings
 set hidden
