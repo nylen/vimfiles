@@ -101,6 +101,7 @@ silent! command! -range FixControlStatements :
     \<line1>,<line2>s/\<\(my\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(unless\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(until\)(/\1 (/e<bar>
+    \<line1>,<line2>s/\<\(switch\)(/\1 (/e<bar>
 nnoremap <silent> <Leader>wc :%FixControlStatements<Cr>
 vnoremap <silent> <Leader>wc :FixControlStatements<Cr>
 
