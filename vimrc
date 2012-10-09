@@ -51,11 +51,11 @@ nnoremap <silent> <Leader>r :redraw!<Cr>
 
 " Quickly switch and move tabs
 " TODO: Make these commands accept ranges
-nnoremap <C-h> :tabprev<Cr>
-nnoremap <C-l> :tabnext<Cr>
-nnoremap <Leader>th :execute 'tabmove ' . string(float2nr(fmod(
+nnoremap <silent> <C-h> :tabprev<Cr>
+nnoremap <silent> <C-l> :tabnext<Cr>
+nnoremap <silent> <Leader>th :execute 'tabmove ' . string(float2nr(fmod(
     \tabpagenr() - 2 + tabpagenr('$'), tabpagenr('$'))))<Cr>
-nnoremap <Leader>tl :execute 'tabmove ' . string(float2nr(fmod(
+nnoremap <silent> <Leader>tl :execute 'tabmove ' . string(float2nr(fmod(
     \tabpagenr(), tabpagenr('$'))))<Cr>
 " "Insert mode is for inserting text"
 "inoremap <C-h> <C-o>:tabprev<Cr>
@@ -76,8 +76,8 @@ highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold term=bold
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
-command! -range FixTabs   :<line1>,<line2>s/\t/  /
-command! -range FixSpaces :<line1>,<line2>s/\s\+$//
+silent! command! -range FixTabs   :<line1>,<line2>s/\t/  /
+silent! command! -range FixSpaces :<line1>,<line2>s/\s\+$//
 nnoremap <silent> <Leader>wt :%FixTabs<Cr>
 nnoremap <silent> <Leader>ws :%FixSpaces<Cr>
 nnoremap <silent> <Leader>wa :%FixTabs<Cr>:%FixSpaces<Cr>
@@ -89,7 +89,7 @@ vnoremap <silent> <Leader>wa :FixTabs<Cr>:FixSpaces<Cr>
 " "if(x)"  -> "if (x)"
 " "for(x)" -> "for (x)"
 " etc.
-command! -range FixControlStatements :
+silent! command! -range FixControlStatements :
     \<line1>,<line2>s/\<\(if\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(elsif\)(/\1 (/e<bar>
     \<line1>,<line2>s/\<\(elseif\)(/\1 (/e<bar>
@@ -105,7 +105,7 @@ nnoremap <silent> <Leader>wc :%FixControlStatements<Cr>
 vnoremap <silent> <Leader>wc :FixControlStatements<Cr>
 
 " Ensure spaces in code between braces and keywords
-command! -range FixBraces :
+silent! command! -range FixBraces :
     \<line1>,<line2>s/){\s*$/) {/e<bar>
     \<line1>,<line2>s/\<\(else\){/\1 {/e<bar>
     \<line1>,<line2>s/\<\(try\){/\1 {/e<bar>
