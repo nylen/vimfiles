@@ -165,6 +165,9 @@ runtime macros/matchit.vim
 autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
     \ commentstring={#%s#}
 
+" Set filetype for MediaWiki markup files
+autocmd BufRead,BufNewFile *.wiki set filetype=mediawiki
+
 " Disable automatic Python folding
 let g:pymode_folding = 0
 
