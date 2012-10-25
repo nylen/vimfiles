@@ -21,8 +21,10 @@ nnoremap <Leader>a cc
 " Directories and backups
 set nobackup
 set directory=~/.vim/tmp//
-set undodir=~/.vim/tmp
-set undofile
+if exists('+undofile')
+  set undodir=~/.vim/tmp
+  set undofile
+endif
 
 " Use Tab instead of Esc in most places
 nnoremap <Tab> <Esc>
