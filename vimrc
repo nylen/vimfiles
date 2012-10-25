@@ -160,7 +160,6 @@ runtime macros/matchit.vim
 
 """"" "Filetype-specific stuff"
 
-
 " Set filetype for Django templates
 autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
     \ commentstring={#%s#}
@@ -168,12 +167,15 @@ autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
 " Set filetype for MediaWiki markup files
 autocmd BufRead,BufNewFile *.wiki set filetype=mediawiki
 
+
+""""" "Plugin settings"
+
 " Disable automatic Python folding
 let g:pymode_folding = 0
 
 " Set up haskellmode
 let g:haddock_browser = "/usr/bin/firefox"
-au BufEnter *.hs compiler ghc
+autocmd BufEnter *.hs compiler ghc
 
 " Change default Sparkup "next" mapping to C-f
 " By default, it overwrites C-n (bad)
@@ -181,6 +183,7 @@ let g:sparkupNextMapping = '<c-f>'
 
 
 """"" "Include bundled plugins via Pathogen"
+
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'python-mode')
 call pathogen#infect()
