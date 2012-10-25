@@ -143,6 +143,7 @@ set history=1000
 
 " Code completion
 set completeopt=menu,menuone,preview
+set complete-=i " Searching includes can be slow
 
 " Commands for dealing with vimrc
 nnoremap <silent> <Leader>c :tabe ~/.vim/vimrc<Cr>
