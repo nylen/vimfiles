@@ -185,6 +185,12 @@ autocmd BufEnter *.hs compiler ghc
 " By default, it overwrites C-n (bad)
 let g:sparkupNextMapping = '<c-f>'
 
+" DetectIndent settings
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+"let g:detectindent_verbosity = -1 " Show what indent options were chosen
+autocmd BufReadPost * :DetectIndent
+
 
 """"" "Include bundled plugins via Pathogen"
 
