@@ -124,6 +124,9 @@ silent! command! -range FixBraces :
 nnoremap <silent> <Leader>wb :%FixBraces<Cr>
 vnoremap <silent> <Leader>wb :FixBraces<Cr>
 
+" Easier macro execution
+nmap <Leader>q @
+
 " Enable line numbering
 set number
 set cpoptions+=n
