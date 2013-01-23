@@ -141,7 +141,7 @@ set gdefault
 " Commands, tab completion, and history
 set showcmd
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=list:longest
 set history=1000
 
 " Code completion
