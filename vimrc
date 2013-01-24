@@ -174,6 +174,9 @@ autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
 " Set filetype for MediaWiki markup files
 autocmd BufRead,BufNewFile *.wiki set filetype=mediawiki
 
+" Set filetype for .json files
+autocmd BufRead,BufNewFile *.json set filetype=javascript
+
 
 """"" "Plugin settings"
 
