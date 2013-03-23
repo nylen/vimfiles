@@ -167,8 +167,10 @@ runtime macros/matchit.vim
 
 """"" "Filetype-specific stuff"
 
-" Set filetype for Django templates
+" Set filetype for Django templates / Swig views
 autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
+    \ commentstring={#%s#}
+autocmd BufNewFile,BufRead */views/*.html set filetype=htmldjango
     \ commentstring={#%s#}
 
 " Set filetype for MediaWiki markup files
