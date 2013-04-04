@@ -198,3 +198,8 @@ endfun
 
 command! -bar -nargs=0 DetectIndent call <SID>DetectIndent()
 
+if exists("g:detectindent_autodetect")
+    augroup detectindent
+        autocmd BufReadPost * call <SID>DetectIndent()
+    augroup END
+endif
