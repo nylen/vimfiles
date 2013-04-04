@@ -195,9 +195,9 @@ let g:sparkupNextMapping = '<c-f>'
 
 " DetectIndent settings
 let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
+let g:detectindent_preferred_indent = 4
+let g:detectindent_autodetect = 1
 "let g:detectindent_verbosity = -1 " Show what indent options were chosen
-autocmd BufReadPost * :DetectIndent
 
 
 """"" "Include bundled plugins via Pathogen"
