@@ -176,7 +176,7 @@ fun! <SID>DetectIndent()
     endif
 
     if &verbose >= g:detectindent_verbosity
-        echo l:verbose_msg
+        echom l:verbose_msg
                     \ ."; has_leading_tabs:" l:has_leading_tabs
                     \ .", has_leading_spaces:" l:has_leading_spaces
                     \ .", shortest_leading_spaces_run:" l:shortest_leading_spaces_run
@@ -191,7 +191,7 @@ fun! <SID>DetectIndent()
           end
         endfor
         if len(changed_msg)
-          echo "Initial buffer settings changed:" join(changed_msg, ", ")
+          echom "Initial buffer settings changed:" join(changed_msg, ", ")
         endif
     endif
 endfun
