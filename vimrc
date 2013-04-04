@@ -15,8 +15,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set smarttab
-" Enter insert mode on the current line at the current indentation level
-nnoremap <Leader>a cc
 
 " Directories and backups
 set nobackup
