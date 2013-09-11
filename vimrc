@@ -135,6 +135,8 @@ set numberwidth=3
 set incsearch
 set nohlsearch
 set gdefault
+set ignorecase
+set smartcase
 
 " Commands, tab completion, and history
 set showcmd
