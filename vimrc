@@ -62,6 +62,13 @@ nnoremap <silent> <Leader>tl :execute 'tabmove ' . string(float2nr(fmod(
 "inoremap <C-h> <C-o>:tabprev<Cr>
 "inoremap <C-l> <C-o>:tabnext<Cr>
 
+" Fold code based on indentation
+set foldmethod=indent
+set nofoldenable " all folds open by default; use zi to toggle
+
+" Highlight folds more subtly
+highlight Folded ctermfg=white ctermbg=darkgray cterm=bold term=bold
+
 " Highlight tabs and trailing whitespace
 set listchars=tab:>.,trail:*
 set list
