@@ -175,16 +175,25 @@ runtime macros/matchit.vim
 """"" "Filetype-specific stuff"
 
 " Set filetype for Django templates / Swig views
-autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
-    \ commentstring={#%s#}
-autocmd BufNewFile,BufRead */views/*.html set filetype=htmldjango
-    \ commentstring={#%s#}
+augroup filetype htmldjango
+    autocmd!
+    autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
+        \ commentstring={#%s#}
+    autocmd BufNewFile,BufRead */views/*.html set filetype=htmldjango
+        \ commentstring={#%s#}
+augroup END
 
 " Set filetype for MediaWiki markup files
-autocmd BufRead,BufNewFile *.wiki set filetype=mediawiki
+augroup filetype mediawiki
+    autocmd!
+    autocmd BufRead,BufNewFile *.wiki set filetype=mediawiki
+augroup END
 
 " Set filetype for .json files
-autocmd BufRead,BufNewFile *.json set filetype=javascript
+augroup filetype json
+    autocmd!
+    autocmd BufRead,BufNewFile *.json set filetype=javascript
+augroup END
 
 
 """"" "Plugin settings"
@@ -194,7 +203,10 @@ let g:pymode_folding = 0
 
 " Set up haskellmode
 let g:haddock_browser = "/usr/bin/firefox"
-autocmd BufEnter *.hs compiler ghc
+augroup compiler ghc
+    autocmd!
+    autocmd BufEnter *.hs compiler ghc
+augroup END
 
 " Change default Sparkup "next" mapping to C-f
 " By default, it overwrites C-n (bad)
