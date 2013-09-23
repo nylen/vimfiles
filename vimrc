@@ -130,7 +130,7 @@ nnoremap <silent> <Leader>wb :%FixBraces<Cr>
 vnoremap <silent> <Leader>wb :FixBraces<Cr>
 
 " Easier macro execution
-nmap <Leader>q @
+nnoremap <Leader>q @
 
 " Enable line numbering
 set number
