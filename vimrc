@@ -74,10 +74,19 @@ set listchars=tab:>.,trail:*
 set list
 " Nasty red background (also handles Windows ^M line endings)
 highlight SpecialKey ctermfg=black ctermbg=red cterm=none term=none
-nnoremap <silent> <Leader>l :highlight SpecialKey ctermfg=black    ctermbg=none
-    \ cterm=none term=none<Cr>
-nnoremap <silent> <Leader>L :highlight SpecialKey ctermfg=darkgray ctermbg=none
-    \ cterm=bold term=bold<Cr>
+" Add a mapping to cycle the SpecialKey highlight style
+nnoremap <silent> <Leader>l :call g:highlight_specialkey_cycle()<Cr>
+let g:highlight_specialkey = 0
+function! g:highlight_specialkey_cycle()
+    let g:highlight_specialkey = (g:highlight_specialkey + 1) % 3
+    if g:highlight_specialkey == 0
+        highlight SpecialKey ctermfg=black    ctermbg=red  cterm=none term=none
+    elseif g:highlight_specialkey == 1
+        highlight SpecialKey ctermfg=black    ctermbg=none cterm=bold term=bold
+    elseif g:highlight_specialkey == 2
+        highlight SpecialKey ctermfg=darkgray ctermbg=none cterm=none term=none
+    endif
+endfunction
 
 " Improve matching-brace highlight colors
 highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold term=bold
