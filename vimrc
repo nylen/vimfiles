@@ -152,19 +152,19 @@ set title
 runtime macros/matchit.vim
 
 " Alignment mappings
-nnoremap <Leader>A: :Tab /:<Cr>
-vnoremap <Leader>A: :Tab /:<Cr>
-nnoremap <Leader>A; :Tab /:<Cr>
-vnoremap <Leader>A; :Tab /:<Cr>
-nnoremap <Leader>A= :Tab /=<Cr>
-vnoremap <Leader>A= :Tab /=<Cr>
+nnoremap <Leader>A: :Tabularize /:<Cr>
+vnoremap <Leader>A: :Tabularize /:<Cr>
+nnoremap <Leader>A; :Tabularize /:<Cr>
+vnoremap <Leader>A; :Tabularize /:<Cr>
+nnoremap <Leader>A= :Tabularize /=<Cr>
+vnoremap <Leader>A= :Tabularize /=<Cr>
 " See http://stackoverflow.com/questions/11497593
-nnoremap <Leader>a: :Tab /^[^:]*\zs:<Cr>
-vnoremap <Leader>a: :Tab /^[^:]*\zs:<Cr>
-nnoremap <Leader>a; :Tab /^[^:]*\zs:<Cr>
-vnoremap <Leader>a; :Tab /^[^:]*\zs:<Cr>
-nnoremap <Leader>a= :Tab /^[^=]*\zs=<Cr>
-vnoremap <Leader>a= :Tab /^[^=]*\zs=<Cr>
+nnoremap <Leader>a: :Tabularize /^[^:]*\zs:<Cr>
+vnoremap <Leader>a: :Tabularize /^[^:]*\zs:<Cr>
+nnoremap <Leader>a; :Tabularize /^[^:]*\zs:<Cr>
+vnoremap <Leader>a; :Tabularize /^[^:]*\zs:<Cr>
+nnoremap <Leader>a= :Tabularize /^[^=]*\zs=<Cr>
+vnoremap <Leader>a= :Tabularize /^[^=]*\zs=<Cr>
 
 
 """"" "Filetype-specific stuff"
