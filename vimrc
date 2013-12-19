@@ -213,6 +213,9 @@ let g:detectindent_preferred_indent = 4
 let g:detectindent_autodetect = 1
 "let g:detectindent_verbosity = -1 " Show what indent options were chosen
 
+" HTML indentation settings
+let g:html_indent_inctags = 'html,body,head,tbody,li,p,template'
+
 
 """"" "Include bundled plugins via Pathogen"
 
