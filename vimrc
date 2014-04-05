@@ -92,7 +92,7 @@ function! g:highlight_specialkey_cycle()
 endfunction
 
 " Improve matching-brace highlight colors
-highlight MatchParen ctermfg=yellow ctermbg=none cterm=bold term=bold
+highlight MatchParen ctermfg=yellow ctermbg=none cterm=none term=none
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
