@@ -115,7 +115,7 @@ nnoremap <Leader>q @
 " Enable line numbering
 set number
 set cpoptions+=n
-highlight LineNr ctermfg=none ctermbg=darkgray cterm=none term=none
+highlight LineNr ctermfg=none ctermbg=none cterm=none term=none
 set numberwidth=3
 
 " Better search options
