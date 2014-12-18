@@ -1,7 +1,3 @@
-" Use two-spaces for indentation
-setlocal expandtab
-setlocal softtabstop=2
-setlocal shiftwidth=2
 setlocal commentstring=#%s
 
 setlocal formatoptions=crl
