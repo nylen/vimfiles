@@ -252,6 +252,9 @@ let g:detectindent_autodetect = 1
 " HTML indentation settings
 let g:html_indent_inctags = 'html,body,head,tbody,li,p,template'
 
+" Allow modelines in first 20 lines of files
+let g:secure_modelines_modelines = 20
+
 
 """"" "Include bundled plugins via Pathogen"
 
