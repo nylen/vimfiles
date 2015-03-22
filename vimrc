@@ -190,6 +190,16 @@ augroup filetype json
     autocmd BufRead,BufNewFile *.json set filetype=javascript
 augroup END
 
+augroup NodeExports
+    autocmd!
+    autocmd User Node call s:mapExportsCommands()
+augroup end
+
+function! s:mapExportsCommands()
+    nnoremap <silent> <Leader>ne :s/^function \(\w\+\)/exports.\1 = function/<Cr>$%:s/;\?$/;/<Cr>%0
+    nnoremap <silent> <Leader>nf :s/^exports\.\(\w\+\) = function/function \1/<Cr>$%:s/;\?$//<Cr>%0
+endfunction
+
 
 """"" "Other autocmds"
 
