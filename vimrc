@@ -72,24 +72,33 @@ set nofoldenable " all folds open by default; use zi to toggle
 " Highlight folds more subtly
 highlight Folded ctermfg=white ctermbg=darkgray cterm=bold term=bold
 
-" Highlight tabs and trailing whitespace
-set listchars=tab:>.,trail:*
+" Highlight tabs and trailing whitespace (and Windows ^M line endings)
+" using &nbsp; chars for tabs (<C-k> <space> <space> to insert):
+" https://coderwall.com/p/07mtla/insert-non-breaking-space-in-vim
+set listchars=tab:  ,trail:*
 set list
-" Nasty red background (also handles Windows ^M line endings)
-highlight SpecialKey ctermfg=black ctermbg=red cterm=none term=none
+highlight SpecialKey ctermfg=red ctermbg=none cterm=bold term=bold
 " Add a mapping to cycle the SpecialKey highlight style
-nnoremap <silent> <Leader>l :call g:highlight_specialkey_cycle()<Cr>
+nnoremap <silent> <Leader>l :call g:Highlight_specialkey_cycle()<Cr>
 let g:highlight_specialkey = 0
-function! g:highlight_specialkey_cycle()
-    let g:highlight_specialkey = (g:highlight_specialkey + 1) % 3
+function! g:Highlight_specialkey_cycle()
+    let g:highlight_specialkey = (g:highlight_specialkey + 1) % 2 " 4
     if g:highlight_specialkey == 0
+        " Nasty red background
         highlight SpecialKey ctermfg=black    ctermbg=red  cterm=none term=none
     elseif g:highlight_specialkey == 1
-        highlight SpecialKey ctermfg=black    ctermbg=none cterm=bold term=bold
-    elseif g:highlight_specialkey == 2
-        highlight SpecialKey ctermfg=darkgray ctermbg=none cterm=none term=none
+        " Nasty red foreground (tabs don't show up because we use them for
+        " indentation at a8c)
+        highlight SpecialKey ctermfg=red ctermbg=none cterm=bold term=bold
+    "elseif g:highlight_specialkey == 2
+    "    " Black background
+    "    highlight SpecialKey ctermfg=black    ctermbg=none cterm=bold term=bold
+    "elseif g:highlight_specialkey == 3
+    "    " Gray background
+    "    highlight SpecialKey ctermfg=darkgray ctermbg=none cterm=none term=none
     endif
 endfunction
+call g:Highlight_specialkey_cycle()
 
 " Improve matching-brace highlight colors
 highlight MatchParen ctermfg=yellow ctermbg=none cterm=none term=none
