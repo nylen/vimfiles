@@ -73,9 +73,7 @@ set nofoldenable " all folds open by default; use zi to toggle
 highlight Folded ctermfg=white ctermbg=darkgray cterm=bold term=bold
 
 " Highlight tabs and trailing whitespace (and Windows ^M line endings)
-" using &nbsp; chars for tabs (<C-k> <space> <space> to insert):
-" https://coderwall.com/p/07mtla/insert-non-breaking-space-in-vim
-set listchars=tab:  ,trail:*
+set listchars=tab:\ \ ,trail:*
 set list
 highlight SpecialKey ctermfg=red ctermbg=none cterm=bold term=bold
 " Add a mapping to cycle the SpecialKey highlight style
