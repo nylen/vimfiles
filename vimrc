@@ -13,7 +13,7 @@ let mapleader=","
 set mouse=
 
 " Tabs/indentation
-set expandtab
+set noexpandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
