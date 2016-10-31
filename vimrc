@@ -210,6 +210,14 @@ function! s:mapExportsCommands()
     nnoremap <silent> <Leader>nf :s/^exports\.\(\w\+\) = function/function \1/<Cr>$%:s/;\?$//<Cr>%0
 endfunction
 
+" Prevent this error on `crontab -e`:
+" crontab: temp file must be edited in place
+" http://vim.wikia.com/wiki/Editing_crontab
+augroup crontab_e
+    autocmd!
+    autocmd filetype crontab set backupcopy=yes
+augroup end
+
 
 """"" "Other autocmds"
 
