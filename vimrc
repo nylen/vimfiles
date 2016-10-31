@@ -172,6 +172,9 @@ nnoremap <Leader>a; :Tabularize /^[^:]*\zs:<Cr>
 vnoremap <Leader>a; :Tabularize /^[^:]*\zs:<Cr>
 nnoremap <Leader>a= :Tabularize /^[^=]*\zs=<Cr>
 vnoremap <Leader>a= :Tabularize /^[^=]*\zs=<Cr>
+" Align PHP arrays at =>
+nnoremap <Leader>a> :Tabularize /^[^=]*\zs=/l1c0l0<Cr>
+vnoremap <Leader>a> :Tabularize /^[^=]*\zs=/l1c0l0<Cr>
 
 
 """"" "Filetype-specific stuff"
