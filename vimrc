@@ -158,14 +158,20 @@ set title
 " Improve bracket matching
 runtime macros/matchit.vim
 
-" Alignment mappings
+""" "Alignment mappings"
+" Multiple delimiter match
 nnoremap <Leader>A: :Tabularize /:<Cr>
 vnoremap <Leader>A: :Tabularize /:<Cr>
 nnoremap <Leader>A; :Tabularize /:<Cr>
 vnoremap <Leader>A; :Tabularize /:<Cr>
 nnoremap <Leader>A= :Tabularize /=<Cr>
 vnoremap <Leader>A= :Tabularize /=<Cr>
-" See http://stackoverflow.com/questions/11497593
+nnoremap <Leader>a, :Tabularize /,/l0l1<Cr>
+vnoremap <Leader>a, :Tabularize /,/l0l1<Cr>
+" Collapse comma-aligned values
+nnoremap <Leader>ac :s/ *,/,/<Cr>
+vnoremap <Leader>ac :s/ *,/,/<Cr>
+" Single delimiter match (see http://stackoverflow.com/questions/11497593)
 nnoremap <Leader>a: :Tabularize /^[^:]*\zs:<Cr>
 vnoremap <Leader>a: :Tabularize /^[^:]*\zs:<Cr>
 nnoremap <Leader>a; :Tabularize /^[^:]*\zs:<Cr>
