@@ -218,6 +218,13 @@ augroup filetype json
     autocmd BufRead,BufNewFile *.json set filetype=javascript
 augroup END
 
+" Set filetype for .scad files
+augroup filetype scad
+    " TODO real syntax highlighting
+    autocmd!
+    autocmd BufRead,BufNewFile *.scad set filetype=javascript
+augroup END
+
 augroup NodeExports
     autocmd!
     autocmd User Node call s:mapExportsCommands()
