@@ -98,6 +98,18 @@ function! g:Highlight_specialkey_cycle()
 endfunction
 call g:Highlight_specialkey_cycle()
 
+" Add a mapping to toggle paste mode
+function! g:TogglePasteMode()
+    if &paste
+        setlocal nopaste
+		echom ':set nopaste " READY FOR EDITING'
+    else
+        setlocal paste
+		echom ':set paste " NOT READY FOR EDITING'
+    endif
+endfunction
+nnoremap <silent> <Leader>p :call g:TogglePasteMode()<Cr>
+
 " Improve matching-brace highlight colors
 highlight MatchParen ctermfg=yellow ctermbg=none cterm=none term=none
 
