@@ -207,13 +207,13 @@ vnoremap <Leader>a> :Tabularize /^[^=]*\zs=/l1c0l0<Cr>
 """"" "Filetype-specific stuff"
 
 " Set filetype for Django templates / Swig views
-" augroup filetype htmldjango
-"     autocmd!
-"     autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
-"         \ commentstring={#%s#}
-"     autocmd BufNewFile,BufRead */views/*.html set filetype=htmldjango
-"         \ commentstring={#%s#}
-" augroup END
+augroup filetype htmldjango
+    autocmd!
+    autocmd BufNewFile,BufRead */templates/*.html set filetype=htmldjango
+        \ commentstring={#%s#}
+    autocmd BufNewFile,BufRead */views/*.html set filetype=htmldjango
+        \ commentstring={#%s#}
+augroup END
 
 " Set filetype for MediaWiki markup files
 augroup filetype mediawiki
