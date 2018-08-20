@@ -10,6 +10,9 @@ if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 
+" Don't use more than normal terminal colors
+set t_Co=16
+
 " Load expected colors
 colorscheme default
 
