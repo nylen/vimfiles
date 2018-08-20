@@ -4,6 +4,15 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Switch syntax highlighting on, when the terminal has colors
+" Do this before loading a color scheme or customizing colors.
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
+
+" Load expected colors
+colorscheme default
+
 " Set <Leader> to comma
 " This works because I can't think of a time when I needed to type a comma
 " that was not followed by a space.
@@ -110,8 +119,8 @@ function! g:TogglePasteMode()
 endfunction
 nnoremap <silent> <Leader>p :call g:TogglePasteMode()<Cr>
 
-" Improve matching-brace highlight colors
-highlight MatchParen ctermfg=yellow ctermbg=none cterm=none term=none
+" Emphasize matching-brace highlight color
+highlight MatchParen ctermfg=red ctermbg=green cterm=bold term=bold
 
 " Commands for fixing up whitespace
 " note - we set gdefault later
@@ -316,13 +325,6 @@ inoremap <C-U> <C-G>u<C-U>
 " if has('mouse')
 "     set mouse=a
 " endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    " set hlsearch
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
